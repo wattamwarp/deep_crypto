@@ -1,15 +1,15 @@
 // To parse this JSON data, do
 //
-//     final cryptoDetails = cryptoDetailsFromJson(jsonString);
+//     final currencyDetails = currencyDetailsFromJson(jsonString);
 
 import 'dart:convert';
 
-CryptoDetails cryptoDetailsFromJson(String str) => CryptoDetails.fromJson(json.decode(str));
+CurrencyDetails currencyDetailsFromJson(String str) => CurrencyDetails.fromJson(json.decode(str));
 
-String cryptoDetailsToJson(CryptoDetails data) => json.encode(data.toJson());
+String currencyDetailsToJson(CurrencyDetails data) => json.encode(data.toJson());
 
-class CryptoDetails {
-  CryptoDetails({
+class CurrencyDetails {
+  CurrencyDetails({
     this.volume,
     this.last,
     this.timestamp,
@@ -31,7 +31,7 @@ class CryptoDetails {
   String? ask;
   double? open;
 
-  factory CryptoDetails.fromJson(Map<String, dynamic> json) => CryptoDetails(
+  factory CurrencyDetails.fromJson(Map<String, dynamic> json) => CurrencyDetails(
     volume: json["volume"],
     last: json["last"],
     timestamp: json["timestamp"],

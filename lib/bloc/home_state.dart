@@ -9,12 +9,12 @@ class InitState extends HomeState{}
 class Loading extends HomeState{}
 
 class ShowDetail extends HomeState{
-  CryptoDetails cryptoDetails;
-  ShowDetail({required this.cryptoDetails});
+  CurrencyDetails currencyDetails;
+  ShowDetail({required this.currencyDetails});
 }
 
 class ShowOrderBook extends HomeState{
-  CryptoDetails cryptoDetails;
+  CurrencyDetails currencyDetails;
   OrderBook orderBook;
-  ShowOrderBook({required this.cryptoDetails,required this.orderBook});
+  ShowOrderBook({required this.currencyDetails,required this.orderBook});
 }

@@ -1,3 +1,3 @@
 
-export 'crypto_details.dart';
+export 'currency_details.dart';
 export 'order_book.dart';
