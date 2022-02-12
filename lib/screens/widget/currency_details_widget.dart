@@ -3,10 +3,10 @@ import 'package:deep_crypto/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-Widget cryptoDetailsWidget(
-    {required CryptoDetails cryptoDetails, required String cryptoName}) {
+Widget currencyDetailsWidget(
+    {required CurrencyDetails currencyDetails, required String cryptoName}) {
   var date = DateTime.fromMillisecondsSinceEpoch(
-      int.parse(cryptoDetails.timestamp.toString()) * 1000);
+      int.parse(currencyDetails.timestamp.toString()) * 1000);
   var output = DateFormat('dd MMM yyyy, HH:mm:ss ').format(date);
   return Container(
     child: Column(
@@ -33,7 +33,7 @@ Widget cryptoDetailsWidget(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const DText('OPEN', variant: TypographyVariant.header),
-                  DText('\$' + cryptoDetails.open.toString(),
+                  DText('\$' + currencyDetails.open.toString(),
                       variant: TypographyVariant.h1),
                 ],
               ),
@@ -42,7 +42,7 @@ Widget cryptoDetailsWidget(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const DText('HIGH', variant: TypographyVariant.header),
-                  DText('\$' + cryptoDetails.high.toString(),
+                  DText('\$' + currencyDetails.high.toString(),
                       variant: TypographyVariant.h1),
                 ],
               ),
@@ -57,7 +57,7 @@ Widget cryptoDetailsWidget(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const DText('LOW', variant: TypographyVariant.header),
-                  DText('\$' + cryptoDetails.low.toString(),
+                  DText('\$' + currencyDetails.low.toString(),
                       variant: TypographyVariant.h1),
                 ],
               ),
@@ -66,7 +66,7 @@ Widget cryptoDetailsWidget(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const DText('LAST', variant: TypographyVariant.header),
-                  DText('\$' + cryptoDetails.last.toString(),
+                  DText('\$' + currencyDetails.last.toString(),
                       variant: TypographyVariant.h1),
                 ],
               ),
@@ -79,7 +79,7 @@ Widget cryptoDetailsWidget(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const DText('VOLUME', variant: TypographyVariant.header),
-              DText(cryptoDetails.volume.toString(),
+              DText(currencyDetails.volume.toString(),
                   variant: TypographyVariant.h1),
             ],
           ),

@@ -101,8 +101,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 215,
                 child: Column(
                   children: [
-                    cryptoDetailsWidget(
-                        cryptoDetails: state.cryptoDetails,
+                    currencyDetailsWidget(
+                        currencyDetails: state.currencyDetails,
                         cryptoName: _searchController.text.toString()),
                     Align(
                         alignment: Alignment.centerRight,
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () {
                             _bloc!.add(GetOrderBook(
                                 cryptoName: _cryptoName,
-                                cryptoDetails: state.cryptoDetails));
+                                currencyDetails: state.currencyDetails));
                           },
                           child: const Padding(
                             padding: EdgeInsets.only(right: 16.0),
@@ -128,8 +128,8 @@ class _HomeScreenState extends State<HomeScreen> {
             if (state is ShowOrderBook) {
               return Column(
                 children: [
-                  cryptoDetailsWidget(
-                    cryptoDetails: state.cryptoDetails,
+                  currencyDetailsWidget(
+                    currencyDetails: state.currencyDetails,
                     cryptoName: _searchController.text.toString(),
                   ),
                   Align(

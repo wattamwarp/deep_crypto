@@ -17,15 +17,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     HomeRepo homeRepo = HomeRepo();
     if (event is GetDetails) {
       emit(Loading());
-      CryptoDetails cryptoDetails =
+      CurrencyDetails currencyDetails =
           await homeRepo.getCryptoDetails(cryptoName: event.cryptoName!);
-      emit(ShowDetail(cryptoDetails: cryptoDetails));
+      emit(ShowDetail(currencyDetails: currencyDetails));
     }
     if (event is GetOrderBook) {
       emit(Loading());
       OrderBook orderBook =
           await homeRepo.getOrderBook(cryptoName: event.cryptoName!);
-      emit(ShowOrderBook(cryptoDetails:event.cryptoDetails! ,orderBook: orderBook));
+      emit(ShowOrderBook(currencyDetails:event.currencyDetails! ,orderBook: orderBook));
     }
   }
 }

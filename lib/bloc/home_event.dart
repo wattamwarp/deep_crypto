@@ -17,6 +17,6 @@ class GetOrderBook extends HomeEvent {
   List<Object?> get props => throw UnimplementedError();
 
   String? cryptoName;
-  CryptoDetails? cryptoDetails;
-  GetOrderBook({required this.cryptoName, required this.cryptoDetails});
+  CurrencyDetails? currencyDetails;
+  GetOrderBook({required this.cryptoName, required this.currencyDetails});
 }
