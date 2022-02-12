@@ -1,7 +1,7 @@
 import 'package:deep_crypto/helper/helper.dart';
 import 'package:flutter/material.dart';
 
-class KText extends StatelessWidget {
+class DText extends StatelessWidget {
   final String data;
   final TypographyVariant variant;
 
@@ -19,7 +19,7 @@ class KText extends StatelessWidget {
   final Color? textColor;
 
 
-  const KText(
+  const DText(
       this.data, {
         required this.variant,
         Key? key,
@@ -86,7 +86,7 @@ class KText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style =
-    KText.styleForVariant(context, variant,textColor: textColor)!.merge(this.style);
+    DText.styleForVariant(context, variant,textColor: textColor)!.merge(this.style);
     return Text(
       data,
       overflow: overflow,
