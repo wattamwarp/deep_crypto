@@ -5,27 +5,72 @@
 // gestures. You can also use WidgetTester to find child widgets in the screens.widget
 // tree, read text, and verify that the values of screens.widget properties are correct.
 
+
+import 'package:deep_crypto/models/models.dart';
+
+import 'package:deep_crypto/screens/widget/widget.dart';
+
 import 'package:deep_crypto/app.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 
-import 'package:deep_crypto/main.dart';
 
+
+///widget testing
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  CurrencyDetails? currencyDetails;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  OrderBook? orderBook;
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  setUp(() {
+    currencyDetails = CurrencyDetails.fromJson(currencyDetialJson);
+    orderBook = OrderBook.fromJson(orderBookJson);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('widget testing - testing currency details',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: currencyDetailsWidget(
+            cryptoName: 'btcusd', currencyDetails: currencyDetails!),
+      ),
+    ));
+
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(find.text('BTCUSD'), findsOneWidget);
+
+    Finder textFinder = find.text('\$' + currencyDetails!.open.toString());
+    expect(textFinder, findsOneWidget);
+
+    textFinder = find.text('\$' + currencyDetails!.low.toString());
+    expect(textFinder, findsOneWidget);
+
+    textFinder = find.text('\$' + currencyDetails!.high.toString());
+    expect(textFinder, findsOneWidget);
+
+    textFinder = find.text('\$' + currencyDetails!.last.toString());
+    expect(textFinder, findsOneWidget);
+  });
+
+  testWidgets('widget testing - testing currency order book',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: orderBookWidget(orderBook: orderBook, height: 500),
+      ),
+    ));
+
+    await tester.pump(const Duration(seconds: 1));
+
+    Finder textFinder = find.text(orderBook!.bids![0][0].toString());
+    expect(textFinder, findsWidgets);
+
+    textFinder = find.text(orderBook!.bids![0][1].toString());
+    expect(textFinder, findsWidgets);
+
+    textFinder = find.text(orderBook!.asks![0][0].toString());
+    expect(textFinder, findsWidgets);
+
+    textFinder = find.text(orderBook!.asks![0][1].toString());
+    expect(textFinder, findsWidgets);
   });
 }
