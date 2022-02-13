@@ -5,8 +5,8 @@ import 'package:deep_crypto/models/models.dart';
 import 'package:http/http.dart' as http;
 
 class HomeRepo {
-  Future<CurrencyDetails> getCryptoDetails({required String cryptoName}) async {
-    var url = Uri.parse(DUrls.CRYPTO_DETAILS + cryptoName);
+  Future<CurrencyDetails> getCurrencyDetails({required String cryptoName}) async {
+    var url = Uri.parse(DUrls.CURRENCY_DETAILS + cryptoName);
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var data = json.decode(response.body);

@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         floatingActionButton: _cryptoName != null
             ? FloatingActionButton(
+          key:const Key('refreshKey'),
                 hoverColor: Colors.black,
                 elevation: 10,
                 onPressed: () {
@@ -68,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: DColors.lightGreyColor.withOpacity(0.50),
           ),
           child: TextField(
+            key: const Key('searchKey'),
             controller: _searchController,
             textInputAction: TextInputAction.search,
             onSubmitted: (value) async {
@@ -86,7 +88,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     _cryptoName = _searchController.text;
                     _bloc!.add(GetDetails(cryptoName: _cryptoName));
                   },
+                  key: const Key('searchIconKey'),
                   child: const Icon(
+
                     Icons.search,
                     color: DColors.voiletColor,
                   )),
@@ -107,6 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Align(
                         alignment: Alignment.centerRight,
                         child: InkWell(
+                          key:const Key('viewOrderKey'),
                           onTap: () {
                             _bloc!.add(GetOrderBook(
                                 cryptoName: _cryptoName,
@@ -135,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Align(
                       alignment: Alignment.centerRight,
                       child: InkWell(
+                        key:const Key('hideOrderKey'),
                         onTap: () {
                           _bloc!.add(GetDetails(cryptoName: _cryptoName));
                         },
