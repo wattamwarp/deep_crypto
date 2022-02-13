@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         floatingActionButton: _cryptoName != null
             ? FloatingActionButton(
+          key:const Key('refreshKey'),
                 hoverColor: Colors.black,
                 elevation: 10,
                 onPressed: () {
@@ -110,6 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Align(
                         alignment: Alignment.centerRight,
                         child: InkWell(
+                          key:const Key('viewOrderKey'),
                           onTap: () {
                             _bloc!.add(GetOrderBook(
                                 cryptoName: _cryptoName,
@@ -138,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Align(
                       alignment: Alignment.centerRight,
                       child: InkWell(
+                        key:const Key('hideOrderKey'),
                         onTap: () {
                           _bloc!.add(GetDetails(cryptoName: _cryptoName));
                         },

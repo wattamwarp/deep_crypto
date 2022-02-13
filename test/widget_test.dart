@@ -5,19 +5,15 @@
 // gestures. You can also use WidgetTester to find child widgets in the screens.widget
 // tree, read text, and verify that the values of screens.widget properties are correct.
 
-import 'dart:convert';
-
-import 'package:deep_crypto/app.dart';
-import 'package:deep_crypto/helper/helper.dart';
 import 'package:deep_crypto/models/models.dart';
-import 'package:deep_crypto/screens/home_screen.dart';
+
 import 'package:deep_crypto/screens/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nock/nock.dart';
 
 import 'common.dart';
 
+///widget testing
 void main() {
   CurrencyDetails? currencyDetails;
 
