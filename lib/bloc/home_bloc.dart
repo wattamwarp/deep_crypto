@@ -18,7 +18,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     if (event is GetDetails) {
       emit(Loading());
       CurrencyDetails currencyDetails =
-          await homeRepo.getCryptoDetails(cryptoName: event.cryptoName!);
+          await homeRepo.getCurrencyDetails(cryptoName: event.cryptoName!);
       emit(ShowDetail(currencyDetails: currencyDetails));
     }
     if (event is GetOrderBook) {

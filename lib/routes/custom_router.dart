@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:deep_crypto/screens/home_screen.dart';
+import 'package:deep_crypto/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomRouter {
@@ -15,6 +16,8 @@ class CustomRouter {
 
       case HomeScreen.routeName:
         return HomeScreen.route();
+      case SplashScreen.routeName:
+        return SplashScreen.route();
 
 
       default:
