@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:deep_crypto/bloc/home_bloc.dart';
 import 'package:deep_crypto/common_widgets/custom_text.dart';
 import 'package:deep_crypto/helper/helper.dart';
