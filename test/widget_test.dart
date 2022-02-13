@@ -5,6 +5,7 @@
 // gestures. You can also use WidgetTester to find child widgets in the screens.widget
 // tree, read text, and verify that the values of screens.widget properties are correct.
 
+import 'package:deep_crypto/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
