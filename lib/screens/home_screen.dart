@@ -68,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: DColors.lightGreyColor.withOpacity(0.50),
           ),
           child: TextField(
+            key: const Key('searchKey'),
             controller: _searchController,
             textInputAction: TextInputAction.search,
             onSubmitted: (value) async {
@@ -86,7 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     _cryptoName = _searchController.text;
                     _bloc!.add(GetDetails(cryptoName: _cryptoName));
                   },
+                  key: const Key('searchIconKey'),
                   child: const Icon(
+
                     Icons.search,
                     color: DColors.voiletColor,
                   )),
