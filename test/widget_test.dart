@@ -11,6 +11,10 @@ import 'package:deep_crypto/models/models.dart';
 import 'package:deep_crypto/screens/widget/widget.dart';
 
 import 'package:deep_crypto/app.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'common.dart';
 
 
 
