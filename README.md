@@ -13,12 +13,12 @@ This applications shows the currency details & their current orders
 
 ## Layout/Overview of this App
  -- images
-![Logo ](https://drive.google.com/file/d/1g7c5IQSfNU9ljAb6r-ZnBgwqh7A_zzCb/view?usp=sharing)
-![Splash Screen ](https://drive.google.com/file/d/16heZjinkTr4YiivUWqEzUf4Lj7PtVwEA/view?usp=sharing)
-![Home Page ](https://drive.google.com/file/d/1LFhR2c3InlM70YkA75UEhC2z2k7v4GB0/view?usp=sharing)
-![Currency Details ](https://drive.google.com/file/d/1YzgJCYwgFp_JQpS0BXHejGMBHMnDcGd5/view?usp=sharing)
-![Loading ](https://drive.google.com/file/d/11t85M0AK7F18RCRkDBxyxcV4DeNogOTT/view?usp=sharing)
-![Order Book ](https://drive.google.com/file/d/1BadOLlS-X_3htJXgQTbk_VufovLmoKvL/view?usp=sharing)
+ ![logo](https://user-images.githubusercontent.com/44410637/153852882-44f3bcfa-cd67-4a37-a680-98688aa85aad.jpeg)
+![splash screen](https://user-images.githubusercontent.com/44410637/153852918-a5171368-fc67-4599-bbd6-dda8c0ed6d9e.jpeg)
+![home page](https://user-images.githubusercontent.com/44410637/153852944-3ce530ba-feee-4001-b9d5-7a579b870e91.jpeg)
+![currency details](https://user-images.githubusercontent.com/44410637/153852958-9ca8e457-ff44-4b0c-a7bb-cd5721dcb804.jpeg)
+![loading](https://user-images.githubusercontent.com/44410637/153852973-e03c5e32-4cfb-4158-be27-bf1ec63471a4.jpeg)
+![order book](https://user-images.githubusercontent.com/44410637/153853002-f8849146-d6b0-42c6-a206-0af8d00fa0d9.jpeg)
 
  
  
