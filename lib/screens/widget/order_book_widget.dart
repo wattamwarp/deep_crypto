@@ -56,16 +56,16 @@ Widget orderBookWidget({required OrderBook? orderBook, required double height}) 
                 ),
                 Expanded(
                   child: ListView.builder(
-                    itemCount: orderBook!.asks!.length,
+                    itemCount:5, //orderBook!.asks!.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 6, vertical: 3),
+                            horizontal: 6, vertical: 6),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             DText(
-                              orderBook.asks![index][0],
+                              orderBook!.asks![index][0],
                               variant: TypographyVariant.h1,
                               textColor: DColors.greyColor,
                             ),

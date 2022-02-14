@@ -18,3 +18,8 @@ class ShowOrderBook extends HomeState{
   OrderBook orderBook;
   ShowOrderBook({required this.currencyDetails,required this.orderBook});
 }
+
+class Error extends HomeState{
+  String errorMsg;
+  Error({required this.errorMsg});
+}
