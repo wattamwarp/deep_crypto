@@ -1,14 +1,11 @@
-import 'dart:async';
-
 import 'package:deep_crypto/bloc/home_bloc.dart';
 import 'package:deep_crypto/common_widgets/custom_text.dart';
 import 'package:deep_crypto/helper/helper.dart';
-import 'package:deep_crypto/models/models.dart';
+
 import 'package:deep_crypto/screens/widget/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -39,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         floatingActionButton: _cryptoName != null
             ? FloatingActionButton(
-          key:const Key('refreshKey'),
+                key: const Key('refreshKey'),
                 hoverColor: Colors.black,
                 elevation: 10,
                 onPressed: () {
@@ -92,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   key: const Key('searchIconKey'),
                   child: const Icon(
-
                     Icons.search,
                     color: DColors.voiletColor,
                   )),
@@ -100,7 +96,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         BlocConsumer<HomeBloc, HomeState>(
-          listener: (BuildContext context, HomeState state) {},
+          listener: (BuildContext context, HomeState state) {
+            if (state is Error) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(
+                  state.errorMsg,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ));
+            }
+          },
           builder: (BuildContext context, HomeState state) {
             if (state is ShowDetail) {
               return SizedBox(
@@ -113,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Align(
                         alignment: Alignment.centerRight,
                         child: InkWell(
-                          key:const Key('viewOrderKey'),
+                          key: const Key('viewOrderKey'),
                           onTap: () {
                             _bloc!.add(GetOrderBook(
                                 cryptoName: _cryptoName,
@@ -142,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Align(
                       alignment: Alignment.centerRight,
                       child: InkWell(
-                        key:const Key('hideOrderKey'),
+                        key: const Key('hideOrderKey'),
                         onTap: () {
                           _bloc!.add(GetDetails(cryptoName: _cryptoName));
                         },
